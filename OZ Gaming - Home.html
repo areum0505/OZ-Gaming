@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OZ Gaming</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="shortcut icon" href="oz/ozicon.ico">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script>
+		$(function() {
+			$('.bxslider').bxSlider({
+				auto:true,
+				speed: 500,
+				pause: 6500,
+				mode: 'horizontal',
+				pager: false
+			})
+
+			$('#select_game').on('click', function(e) {  
+				e.stopImmediatePropagation();
+			})
+		})
+	</script>
+	<script>
+		function changeImage() {
+			var sel = document.getElementById("select_game");
+			var img1 = document.getElementById("player1");
+			var img2 = document.getElementById("player2");
+			var img3 = document.getElementById("player3");
+			var img4 = document.getElementById("player4");
+			var img5 = document.getElementById("player5");
+			var nick = document.getElementsByClassName("player_nick");
+			var name = document.getElementsByClassName("player_name");
+
+			var index = sel.selectedIndex;
+			switch(sel.options[index].value) {
+				case 'lol' :
+					img1.src = 'oz/lol/SoaR.png';
+					nick[0].innerHTML = "SoaR";
+					name[0].innerHTML = "이강표";
+					img2.src = 'oz/lol/BroCColi.png';
+					nick[1].innerHTML = "BroCColi";
+					name[1].innerHTML = "김윤재";
+					img3.src = 'oz/lol/Ian.png';
+					nick[2].innerHTML = "Ian";
+					name[2].innerHTML = "안준형";
+					img4.src = 'oz/lol/Pilot.png';
+					nick[3].innerHTML = "Pilot";
+					name[3].innerHTML = "나우형";
+					img5.src = 'oz/lol/Motive.png';
+					nick[4].innerHTML = "Motive";
+					name[4].innerHTML = "조세희";
+					break;
+				case 'overwatch' : 
+					img1.src = 'oz/overwatch/ZEST.png';
+					nick[0].innerHTML = "ZEST";
+					name[0].innerHTML = "김현우";
+					img2.src = 'oz/overwatch/Develop.png';
+					nick[1].innerHTML = "Develop";
+					name[1].innerHTML = "채락훈";
+					img3.src = 'oz/overwatch/SilverCoin.png';
+					nick[2].innerHTML = "SilverCoin";
+					name[2].innerHTML = "박화랑";
+					img4.src = 'oz/overwatch/Friday.png';
+					nick[3].innerHTML = "Friday";
+					name[3].innerHTML = "조민재";
+					img5.src = 'oz/overwatch/Skewed.png';
+					nick[4].innerHTML = "Skewed";
+					name[4].innerHTML = "김민석";
+					break;
+				case 'pubg' :
+					img1.src = 'oz/pubg/MIRA.jpg';
+					nick[0].innerHTML = "MIRA";
+					name[0].innerHTML = "김호욱";
+					img2.src = 'oz/pubg/PLIKHE.jpg';
+					nick[1].innerHTML = "PLIKHE";
+					name[1].innerHTML = "김성민";
+					img3.src = 'oz/pubg/KaSha.jpg';
+					nick[2].innerHTML = "KaSha";
+					name[2].innerHTML = "김도형";
+					img4.src = 'oz/pubg/Smoke.jpg';
+					nick[3].innerHTML = "Smoke";
+					name[3].innerHTML = "우태규";
+					img5.src = 'oz/pubg/Elca.jpg';
+					nick[4].innerHTML = "Elca";
+					name[4].innerHTML = "조중희";
+					break;
+				case 'kart' :
+					img1.src = 'oz/kartrider/이재인.png';
+					nick[0].innerHTML = "Lee Jae In";
+					name[0].innerHTML = "이재인";
+					img2.src = 'oz/kartrider/김기수.png';
+					nick[1].innerHTML = "Kim Ki Soo";
+					name[1].innerHTML = "김기수";
+					img3.src = 'oz/kartrider/문민기.png';
+					nick[2].innerHTML = "Moon Min Ki";
+					name[2].innerHTML = "문민기";
+					img4.src = 'oz/kartrider/서정현.png';
+					nick[3].innerHTML = "Seo Jeong Hyun";
+					name[3].innerHTML = "서정현";
+					img5.src = 'oz/kartrider/우성민.png';
+					nick[4].innerHTML = "Woo Sung Min";
+					name[4].innerHTML = "우성민";
+			}
+		}
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Gothic+A1|Sunflower:500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<style>
+		* { 
+			margin: 0; padding: 0; 
+			box-sizing: border-box;
+		}
+		#all { 
+			margin: 0 auto;
+			background: white;
+			background: #575e40;
+		}
+		/*
+			start header
+		*/
+		#header {
+			background: black;
+			overflow: hidden;
+			width: 100%;
+			position: fixed;
+			z-index: 99999;
+		}
+		#header #logo {
+			margin-left: 30px;
+			float: left;
+		}
+		#header #logo img { width: 15%; margin-top: 1px; }
+		#header ul {
+			float: right;
+			list-style: none;
+			margin-right: 30px;
+			padding: 21px;
+		}
+		#header ul li {
+			margin: 0 21px;
+			display: inline;
+			font-family: 'Sunflower', sans-serif;
+
+		}
+		#header ul a {
+			text-decoration: none;
+			color: white;
+			font-size: 16px;
+			padding: 22px 10px;
+		}
+		#header ul a:nth-child(1) { 
+			border-bottom: 2px solid #feed05;
+			color: #feed05;
+		} 
+		#header ul a:hover {
+			background: #feed05;
+			color: black;
+		}
+		/*
+			end header
+		*/
+
+		/*
+			start content
+		*/
+		#content {
+			overflow: hidden;
+			width: 75%;
+			margin: 0 auto;
+			background: white;
+		}
+		#content #main_img {
+			margin-top: 63px;
+			margin-bottom: -60px;
+		}
+		#content #main_img img {
+			width: 100%;
+		}
+		#content #main_content {
+			margin: 10px;
+			overflow: hidden;
+		}
+		#content #main_content .real_main_content {
+			width: 50%; height: 300px;
+			float: left;
+			border: 1px solid black;
+			padding: 5px;
+		}
+		#content #main_content .real_main_content:nth-child(2) { border-left: none; }
+		#content #main_content .real_main_content:nth-child(5) { border-left: none; }
+		#content #main_content #player {
+			width: 100%; height: 300px;
+			border-left: 1px solid black; border-right: 1px solid black;
+			float: left;
+			padding: 5px;
+		}
+		#content #main_content .title { height: 20%; font-family: 'Gothic A1', sans-serif; }
+		#content #main_content .name { font-size: 2.5em; }
+		#content #main_content .name:nth-child(2n) {  float: right; padding-left: 70%; }
+
+		#content #main_content .real_main_content .notice a { text-decoration: none; color: black; }
+		#content #main_content .real_main_content .notice a:hover { text-decoration: underline; }
+		#content #main_content .real_main_content .notice p { margin: 5px; font-family: 'Nanum Gothic', sans-serif; }
+		#content #main_content .real_main_content .notice p:nth-child(2n+1) { float: left; }
+		#content #main_content .real_main_content .notice p:nth-child(2n) { float: right; }
+
+		#content #main_content .real_main_content .match_content {
+			width: 50%; height: 80%;
+			padding: 0 1%;
+			float: left;
+		} #left_border { border-right: 1.5px solid black; }
+		#content #main_content .real_main_content .match_content .match_title { 
+			font-size: 1.2em;
+			text-decoration: bold;
+		}
+		#content #main_content .real_main_content .match_content .schedule {
+			padding: 1% 0;
+			width: 100%; height: 90%;
+			font-family: 'Nanum Gothic', sans-serif;
+		} .schedule p { margin-top: 7px; }
+
+		#content #main_content .real_main_content .match_content .result { width: 100%; }
+		.result img { width: 100%; }
+		.result td { height: 30px; }
+		.result td:nth-child(1) { width: 75%; }
+		.result td:nth-child(2) { width: 15%; text-align: center; }
+		.result td:nth-child(3) { width: 10%; }
+
+		#player .title .name #select_game {
+			height: 50%;
+			font-size: 15px;
+		}
+		#player #player_content {
+			height: 80%;
+		}
+		#player #player_content .player-list li {
+			width: 20%;
+			float: left;
+			list-style: none;
+			position: relative;
+			overflow: hidden;
+		}
+		#player #player_content .player-list .player_info {
+			position: absolute;
+			text-align: center;
+			top: 200px;
+			width: 100%; height: 100%;
+			padding-top: 30%;
+			background: rgba(255,255,255,0.6);
+			opacity: 0;
+			-moz-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-webkit-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+			z-index: 10;
+		}
+		#player #player_content .player-list li:hover .player_info {
+			opacity: 1;
+			-moz-transform: translateY(-200px);
+			-ms-transform: translateY(-200px);
+			-o-transform: translateY(-200px);
+			-webkit-transform: translateY(-200px);
+			transform: translateY(-200px);
+		}
+		#player #player_content .player-list img { 
+			width: 100%;
+			z-index: 1;
+		}
+		#gallery_content {
+			width: 100%; height: 80%;
+		}
+		#gallery_content .gallery_img {
+			width: 33.3%; height: 49.9%;
+			float: left;
+			margin: 0.01%;
+			overflow: hidden;
+		}
+		#gallery_content .gallery_img img { width: 99%;	}
+
+		#gallery_content .uniform {
+			width: 50%; height: 100%;
+			float: left;
+			border: 1px solid black;
+		}
+		#gallery_content .uniform:nth-child(2) { border-left: none; }
+		#gallery_content .uniform .bxslider img {
+			width: 46.9%; margin: 0 auto;
+		}
+		#gallery_content .uniform #real_uniform {
+			height: 100%; padding: 0 28%;
+		}
+		/*
+			end content
+		*/
+
+		/*
+			start footer
+		*/
+		#footer { background: #373c28; }
+		#footer #up_content {
+			width: 85%;
+			margin: 0 auto;
+			border-bottom: 1px solid white;
+			overflow: hidden;
+		}
+		#footer #down_content {
+			width: 85%;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		#footer #up_content #sponcer {
+			width: 55%;
+			float: left;
+			padding: 10px;
+		}
+		#footer #up_content #sns {
+			width: 45%;
+			float: right;
+			padding: 10px;
+		}
+		#footer #down_content #contact {
+			width: 100%;
+			padding: 10px;
+		}
+		#footer span {
+			font-size: 30px;
+			color: white;
+			float: left;
+		}
+		#footer img, svg {
+			height: 50px;
+			float: left;
+			margin-left: 10px;
+		}
+		#footer ul {
+			margin-left: 10px;
+			list-style: none;
+			float: left;
+			color: white;
+			font-size: 20px;
+			font-family: 'Nanum Gothic', sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id="all">
+		<div id="header">
+			<a id="logo" href="OZ Gaming - Home.html"><img src="oz/oz.jpg"></a>
+			<ul>
+				<a href="OZ Gaming - Home.html"><li>Home</li></a>
+				<a href="OZ Gaming - About.html"><li>About</li></a>
+				<a href="OZ Gaming - AboutLol.html"><li>Team</li></a>
+				<a href="OZ Gaming - News.html"><li>News</li></a>
+				<a href="OZ Gaming - Match.html"><li>Match</li></a>
+				<a href="Oz Gaming - Gallery.html"><li>Gallery</li></a>
+				<a href="http://ozgaming.kr/shop"><li>Shop</li></a>
+			</ul>	
+		</div>	
+		<div id="content">
+			<div id="main_img">
+				<ul class="bxslider">
+				    <li><a href="#"><img src="oz/rhd.png"></a></li>
+				    <li><a href="#"><img src="oz/kartrider.jpg"></a></li>
+				    <li><a href="#"><img src="oz/overwatch.jpg"></a></li>
+  				</ul>
+			</div>
+			<div id="main_content">
+				<div class="real_main_content">
+					<div class="title">
+						<span class="name">News</span> 
+						<span class="name" onclick="location.href='OZ Gaming - News.html';">></span>
+					</div>
+					<div class="notice">
+						<p>
+							<a href="http://www.dailyesports.com/view.php?ud=202006161656316260283f60ce7c_27" target="blank">[OW] 오즈 게이밍 오버워치 팀, 배틀리카 인수</a>
+						</p>
+						<P>2020.06.16</P>
+					</div>
+					<div class="notice">
+						<p>
+							<a href="http://www.inven.co.kr/webzine/news/?news=238295&iskin=esports" target="blank">[LOL] 오즈게이밍, LCK 프랜차이즈 도전 선언</a>
+						</p>
+						<P>2020.05.13</P>
+					</div>
+					<div class="notice">
+						<p>
+							<a href="https://twitter.com/OZ_Gaming_kr/status/1245680673232277504" target="blank">[OW] Welcome AMON !</a>
+						</p>
+						<P>2020.04.02</P>
+					</div>
+					<div class="notice">
+						<p>
+							<a href="http://www.inven.co.kr/webzine/news/?news=235817&iskin=esports" target="blank">[LOL] '크라운' 이민호, 북미 떠나 챌린저스 OZ 게이밍 합류</a>
+						</p>
+						<P>2020.03.20</P>
+					</div>
+					<div class="notice">
+						<p>
+							<a href="https://sports.naver.com/news.nhn?oid=347&aid=0000139251" target="blank">[LOL] 오즈 게이밍, 락헤드 플레이어즈 인수</a>
+						</p>
+						<P>2020.01.14</P>
+					</div>
+					<div class="notice">
+						<p>
+							<a href="https://twitter.com/OZ_Gaming_kr/status/1206220149172236288" target="blank">[KART] 2020 카트라이더 리그 시즌 1 개인전 본선 진출</a>
+						</p>
+						<P>2019.12.15</P>
+					</div>
+					<div class="notice">
+						<p>
+							<a href="https://twitter.com/OZ_Gaming_kr/status/1203286221251760130" target="blank">[PUBG] Mira, PLIKHE, Smoke 선수 계약 종료</a>
+						</p>
+						<P>2019.12.07</P>
+					</div>	
+					<div class="notice">
+						<p>
+							<a href="https://twitter.com/OZ_Gaming_kr/status/1196325063437324288" target="blank">[OW] AMON 코치 계약 종료</a>
+						</p>
+						<P>2019.11.17</P>
+					</div>				
+				</div>
+				<div class="real_main_content">
+					<div class="title">
+						<span class="name">Match</span> 
+						<span class="name" onclick="location.href='#';">></span>
+					</div>
+					<div class="match_content" id="left_border">
+						<span class="match_title">Schedule</span>
+						<div class="schedule">
+							<p>예정된 경기가 없습니다.</p>
+						</div>
+					</div>
+					<div class="match_content">
+						<span class="match_title">Result</span>
+						<div class="schedule">
+							<table class="result">
+								<tr>
+									<td>[LOL]CK | OZvsASP</td>
+									<td>2:1</td>
+									<td><a href="http://vod.afreecatv.com/PLAYER/STATION/58355330" target="blank"><img src="oz/afreeca.png"></a></td>
+								</tr>
+								<tr>
+									<td>[LOL]CK | EMvsOZ</td>
+									<td>0:2</td>
+									<td><a href="http://vod.afreecatv.com/PLAYER/STATION/58192365" target="blank"><img src="oz/afreeca.png"></a></td>
+								</tr>
+								<tr>
+									<td>[LOL]CK | ESCvsOZ</td>
+									<td>2:1</td>
+									<td><a href="http://vod.afreecatv.com/PLAYER/STATION/58065661" target="blank"><img src="oz/afreeca.png"></a></td>
+								</tr>
+								<tr>
+									<td>[KART]개인전 16강 최종전</td>
+									<td>7위</td>
+									<td><a href="https://www.youtube.com/watch?v=LTaiWZdAz9s" target="blank"><img src="oz/youtube.png"></a></td>
+								</tr>
+								<tr>
+									<td>[OW]OWCK | OZGvsO2B</td>
+									<td>0:3</td>
+								</tr>
+								<tr>
+									<td>[OW]OWCK | OZGvsBM</td>
+									<td>3:1</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div id="player">
+					<div class="title">
+						<span class="name">
+							Player
+							<select id="select_game" onchange="changeImage()">
+								<option value="lol">LOL</option>
+								<option value="overwatch">OVERWATCH</option>
+								<option value="pubg">PUBG</option>
+								<option value="kart">KARTRIDER</option>
+							</select>
+						</span> 
+						<span class="name" onclick="location.href='OZ Gaming - AboutLol.html';">></span>
+					</div>	
+					<div id="player_content">
+						<ul class="player-list">
+							<li>
+								<img id="player1" src="oz/lol/SoaR.png">
+								<div class="player_info">
+									<h1 class="player_nick">SoaR</h1>
+									<p class="player_name">이강표</p>
+								</div>
+							</li>
+							<li>
+								<img id="player2" src="oz/lol/BroCColi.png">
+								<div class="player_info">
+									<h1 class="player_nick">BroCColi</h1>
+									<p class="player_name">김윤재</p>
+								</div>
+							</li>
+							<li>
+								<img id="player3" src="oz/lol/Ian.png">
+								<div class="player_info">
+									<h1 class="player_nick">Ian</h1>
+									<p class="player_name">안준형</p>
+								</div>
+							</li>
+							<li>
+								<img id="player4" src="oz/lol/Pilot.png">
+								<div class="player_info">
+									<h1 class="player_nick">Pilot</h1>
+									<p class="player_name">나우형</p>
+								</div>
+							</li>
+							<li>
+								<img id="player5" src="oz/lol/Motive.png">
+								<div class="player_info">
+									<h1 class="player_nick">Motive</h1>
+									<p class="player_name">조세희</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="real_main_content">
+					<div class="title">
+						<span class="name">Gallery</span> 
+						<span class="name" onclick="location.href='#';">></span>
+					</div>	
+					<div id="gallery_content">
+						<div class="gallery_img"> <img src="oz/gallery/ozlol1.jpg"> </div>
+						<div class="gallery_img"> <img src="oz/gallery/ozlol2.jpg"> </div>
+						<div class="gallery_img"> <img src="oz/gallery/ozlol3.jpg"> </div>
+						<div class="gallery_img"> <img src="oz/gallery/ozlol4.jpg"> </div>
+						<div class="gallery_img"> <img src="oz/gallery/ozpubg1.jpg"> </div>
+						<div class="gallery_img"> <img src="oz/gallery/ozow1.jpg"> </div>
+					</div>
+				</div>
+				<div class="real_main_content">
+					<div class="title">
+						<span class="name">Shop</span> 
+						<span class="name" onclick="location.href='#';">></span>
+					</div>
+					<div id="gallery_content">
+						<div class="uniform">
+							<ul class="bxslider">
+							    <li><img src="oz/uniform1.png"></li>
+							    <li><img src="oz/uniform2.png"></li>
+							    <li><img src="oz/uniform3.png"></li>
+							    <li><img src="oz/uniform4.png"></li>
+							    <li><img src="oz/uniform5.png"></li>
+  							</ul>
+						</div>
+						<div class="uniform">
+							<img id="real_uniform" src="oz/real_uniform.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="up_content">
+				<div id="sponcer">
+					<span>Partners | </span>
+					<a href="https://battlica.com//"target="blank"><img src="oz/battlica.png"></a>
+					<a href="http://www.ozarena.com/"target="blank"><img src="oz/optimum_zone.png"></a>
+					<a href="http://wesl.kr/"target="blank"><img src="oz/wesl.png"></a>
+				</div>
+				<div id="sns">
+					<span>Social | </span>
+					<a href="https://www.facebook.com/ozgamingkr/" target="blank">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 87.9 70.9" style="enable-background:new 0 0 87.9 70.9;" xml:space="preserve">
+							<style type="text/css"> .st0{fill:#FFFFFF;} </style>
+							<path class="st0" d="M67.4,6.4H20.4c-3,0-5.5,2.5-5.5,5.5v46.9c0,3,2.5,5.5,5.5,5.5H46V42h-7.5v-8.8H46v-6.5
+								c0-7.5,4.6-11.5,11.2-11.5c2.3,0,4.6,0.1,6.8,0.3v7.8h-4.7c-3.6,0-4.3,1.8-4.3,4.3v5.6h8.7L62.6,42H55v22.4h12.5
+								c3,0,5.5-2.5,5.5-5.5V12C72.9,8.9,70.5,6.4,67.4,6.4z"/>
+						</svg>
+					</a>
+					<a href="https://twitter.com/OZ_Gaming_kr" target="blank">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 			viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+							<style type="text/css"> .st0{fill:#ffffff;} </style>
+							<path class="st0" d="M250,88c-7.4,3.3-15.3,5.5-23.6,6.5c8.5-5.1,15-13.1,18-22.7c-7.9,4.7-16.7,8.1-26.1,10c-7.5-8-18.1-13-30-13
+							c-22.7,0-41,18.4-41,41c0,3.2,0.4,6.3,1.1,9.4c-34.1-1.7-64.3-18-84.6-42.9c-3.5,6.1-5.6,13.1-5.6,20.6c0,14.2,7.2,26.8,18.3,34.2
+							c-6.7-0.2-13.1-2.1-18.6-5.1c0,0.2,0,0.3,0,0.5c0,19.9,14.1,36.5,32.9,40.2c-3.4,0.9-7.1,1.4-10.8,1.4c-2.6,0-5.2-0.3-7.7-0.7
+							c5.2,16.3,20.4,28.2,38.3,28.5c-14,11-31.7,17.6-51,17.6c-3.3,0-6.6-0.2-9.8-0.6c18.2,11.6,39.7,18.4,62.9,18.4
+							c75.5,0,116.7-62.5,116.7-116.7c0-1.8,0-3.5-0.1-5.3C237.5,103.4,244.5,96.2,250,88z"/>
+						</svg>
+					</a>
+					<a href="https://www.instagram.com/ozgaming_kr/" target="blank">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 					viewBox="0 0 720 720" style="enable-background:new 0 0 720 720;" xml:space="preserve">
+						<style type="text/css"> .st0{fill:#FFFFFF;} </style>
+						<path class="st0" d="M456.6,601.1h-195c-74.6,0-135.7-61.1-135.7-135.7V257.6c0-74.6,61.1-135.7,135.7-135.7h195
+							c74.6,0,135.7,61.1,135.7,135.7v207.8C592.3,540.1,531.2,601.1,456.6,601.1z M456.6,565.3c26.5,0,51.5-10.4,70.5-29.4
+							s29.4-44,29.4-70.5V257.6c0-26.5-10.4-51.5-29.4-70.5s-44-29.4-70.5-29.4h-195c-26.5,0-51.5,10.4-70.5,29.4s-29.4,44-29.4,70.5
+							v207.8c0,26.5,10.4,51.5,29.4,70.5s44,29.4,70.5,29.4H456.6z"/>
+						<path class="st0" d="M488.2,359.7c0,70.9-57.5,128.4-128.4,128.4s-128.4-57.5-128.4-128.4s57.5-128.4,128.4-128.4
+							S488.2,288.7,488.2,359.7z M359.1,275.7c-46.4,0-84.1,37.7-84.1,84.1s37.7,84.1,84.1,84.1s84.1-37.7,84.1-84.1
+							S405.6,275.7,359.1,275.7z"/>
+						<circle class="st0" cx="490.3" cy="229.2" r="30.4"/>
+						</svg>
+					</a>
+					<a href="https://www.twitch.tv/ozgamingkr" target="blank">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 					viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+							<style type="text/css"> .st0{fill:#ffffff;} </style>
+							<g>
+							<path class="st0" d="M96.9,259c0-8.7,0-17.1,0-26.1c-17.7,0-35.1,0-52.9,0c0-1.2,0-1.9,0-2.8c0-49.1,0-98,0-147.1
+							c0-1.6,0.3-2.8,0.6-4.4c3.7-11.8,7.8-23.6,11.8-35.5c0.6-1.6,1.2-2.2,2.8-2.2c64.7,0,129.1,0,193.7,0c0.6,0,1.2,0,2.2,0
+							c0,0.9,0,1.9,0,2.8c0,42.3,0,84.3,0,126.6c0,1.9-0.6,3.1-1.9,4.4c-18.7,18.7-37.3,37.3-56,56c-1.2,1.2-2.5,1.9-4.4,1.9
+							c-11.5,0-22.7,0-34.2,0c-2.2,0-3.7,0.6-5.3,2.2c-7.5,7.8-15.2,15.2-22.7,22.7c-0.6,0.6-1.9,1.6-2.8,1.6c-10.3,0-20.2,0-30.5,0
+							C97.6,259.3,97.2,259,96.9,259z M76.7,61.2c0,46.3,0,92.7,0,139c15.5,0,30.8,0,46.3,0c0,8.7,0,17.4,0,26.4c0.6-0.6,1.2-0.9,1.6-1.6
+							c7.8-7.8,15.5-15.5,23.3-23.3c1.2-1.2,2.2-1.6,3.7-1.6c16.2,0,32.3,0,48.5,0c1.2,0,2.8-0.6,3.4-1.6c10-10,20.2-19.9,30.2-29.9
+							c1.2-1.2,1.6-2.2,1.6-3.7c0-33.9,0-67.5,0-101.4c0-0.9,0-1.6,0-2.5C182.5,61.2,129.6,61.2,76.7,61.2z"/>
+							<path class="st0" d="M149.5,101c0,19.6,0,39.2,0,58.8c-6.5,0-13.1,0-19.6,0c0-19.6,0-39.2,0-58.8C136.4,101,142.7,101,149.5,101z"
+									/>
+							<path class="st0" d="M202.1,160.1c-6.5,0-12.8,0-19.3,0c0-19.6,0-39.2,0-58.8c6.2,0,12.8,0,19.3,0
+									C202.1,120.6,202.1,140.2,202.1,160.1z"/>
+							</g>
+						</svg>
+					</a>
+					<a href="https://www.youtube.com/channel/UCV2MKUOI0nxQy4HrY7j1KIw" target="blank">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+						<style type="text/css"> .st0{fill:#ffffff;} </style>
+						<path class="st0" d="M207.4,65.9H91.6c-63.3,0-63.3,18-63.3,62.4v43.4c0,42.2,9,62.4,63.3,62.4h115.7c49.1,0,63.3-11.8,63.3-62.4
+						v-43.4C270.7,81.6,268.3,65.9,207.4,65.9z M124.7,183v-68.1l65.3,33.9L124.7,183z"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div id="down_content">
+				<div id="contact">
+					<span>Contact | </span>
+					<ul>
+						<li>Owner : 이개성</li>
+						<li>Address : 서울시 강남구 봉은사로 24길 73, e스포츠센터 (주)피지엠파트너스</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
