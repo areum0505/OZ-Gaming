@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Gothic+A1|Sunflower:500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="oz/ozicon.ico">
 	<style>
 		* { 
@@ -48,7 +49,7 @@
 			font-size: 16px;
 			padding: 22px 10px;
 		}
-		#header ul a:nth-child(4) { 
+		#header ul a:nth-child(3) { 
 			border-bottom: 2px solid #feed05;
 			color: #feed05;
 		} 
@@ -80,60 +81,63 @@
 			width: 470px; height: 80px;
 			top: 50%; left: 50%;
 			margin-top: -40px; margin-left: -235px;
-			font-size: 50px;
+			font-size: 60px;
 			text-align: center;
 			line-height: 70px;
+			font-family: 'Mukta', sans-serif;
 		}
-		#content #main_title img { width: 100%; opacity: 0.5; }
-
 		#content #main_content {
 			padding: 10px;
 			color: white;
 			overflow: hidden;
 		}
-		#content #main_content .news {
-			border: 1px solid white;
-			border-bottom: none;
-			height: 100px;
-			width: 90%;
+
+		#content #main_title img { width: 100%; opacity: 0.5; }
+		#content #main_title ul {
+			width: 602px; 
 			margin: 0 auto;
-			padding: 0.1%;
-			background: #1f1f1f;
-			font-family: 'Nanum Gothic', sans-serif;
 		}
-		#content #main_content .news:hover {
+		#content #main_title ul li {
+			list-style: none;
+			float: left;
+			border: 1px solid white;
+			padding: 10px;
+			width: 150px;
+			color: white;
+			text-align: center;
+			font-family: 'Sunflower', sans-serif;
+			font-size: 20px;
+		}
+		#content #main_title ul li:hover {
+			border: 1px solid #feed05;
+			background-color: #feed05;
+		}
+		#content #main_title ul li:hover a { color: black; }
+		#content #main_title ul li:nth-child(2) {
+			color: #feed05;
+			border: 1px solid #feed05;
+		}
+		#content #main_title a { text-decoration: none; color: white; padding: 10px 20px; }
+
+		#content #main_content .player { 
+			overflow: hidden; 
+			margin-top: 20px;
+		}
+		#content #main_content .player h1 { clear: both; margin: 10px; }
+		#content #main_content .player_info {
+			width: 20%; height: 340px;
 			background: white;
 			color: black;
-			transform:scale(1.01);
-		}
-		#content #main_content .news:hover .news_title h3 { color: black; }
-		#content #main_content .news:nth-last-child(1) { border-bottom: 1px solid white; }
-		#content #main_content .news .news_img {
-			width: 20%; height: 100%;
 			float: left;
-			overflow: hidden;
+			font-family: 'Nanum Gothic', sans-serif;
 		}
-		#content #main_content .news img {
-			width: 100%;
-		}
-		#content #main_content .news .news_title {
-			overflow: hidden;
-			padding: 0.5%;
-		}
-		#content #main_content .news .news_title h3 {
-			width: 80%;
-			float: left;
-			color: white;
-		}
-		#content #main_content .news .news_title .news_date {
-			width: 20%;
-			float: right;
-			text-align: right;
-		}
-		#content #main_content .news .news_con {
-			margin: 0 auto;
-			padding: 0.5% 1%;
-			overflow: hidden;
+		#content #main_content .player_info img { width: 100%; }
+		#content #main_content .player_info .player_prod p { float: right; }
+		.player_prod, .player_sns { padding: 10px; }
+		.player_sns a { text-decoration: none; }
+		#content #main_content .player_sns img { 
+			width: 9.8%; 
+			margin: 5px;
 		}
 		/*
 			end content
@@ -193,165 +197,153 @@
 		<div id="header">
 			<a id="logo" href="OZ Gaming - Home.html"><img src="oz/oz.jpg"></a>
 			<ul>
-				<a href="OZ Gaming - Home.html"><li>Home</li></a>
-				<a href="OZ Gaming - About.html"><li>About</li></a>
-				<a href="OZ Gaming - AboutLol.html"><li>Team</li></a>
-				<a href="OZ Gaming - News.html"><li>News</li></a>
-				<a href="OZ Gaming - Match.html"><li>Match</li></a>
-				<a href="Oz Gaming - Gallery.html"><li>Gallery</li></a>
+				<a href="home.html"><li>Home</li></a>
+				<a href="about.html"><li>About</li></a>
+				<a href="lol.html"><li>Team</li></a>
+				<a href="news.html"><li>News</li></a>
+				<a href="match.html"><li>Match</li></a>
+				<a href="gallery.html"><li>Gallery</li></a>
 				<a href="http://ozgaming.kr/shop"><li>Shop</li></a>
 			</ul>	
 		</div>	
 		<div id="content">
 			<div id="main_title">
-				<img src="oz/newsHeader.jpg">
-				<h1>NEWS</h1>
+				<img src="oz/overwatch/overwatchhead.png">
+				<h1>Overwatch</h1>
+				<ul>
+					<li><a href="lol.html">LOL</a></li>
+					<li><a href="overwatch.html">Overwatch</a></li>
+					<li><a href="pubg.html">PUBG</a></li>
+					<li><a href="kart.html">Kartrider</a></li>
+				</ul>
 			</div>
 			<div id="main_content">
-				<div class="news">
-					<div class="news_img">
-						<a href="http://www.dailyesports.com/view.php?ud=202006161656316260283f60ce7c_27" target="blank">
-						<img src="oz/news/배틀리카.jpg">
-					</a>
+				<div class="player">
+					<h1>Staff</h1>
+					<div class="player_info">
+						<img src="oz/overwatch/amon.jpg">
+						<div class="player_prod">
+							<h3>AMON</h3>
+							<p>Head Coach</p>
+							<h4>김경제</h4>
+						</div>
+						<div class="player_sns">
+							
+						</div>
 					</div>
-					<div class="news_title">
-						<a href="http://www.dailyesports.com/view.php?ud=202006161656316260283f60ce7c_27" target="blank">
-							<h3>오즈 게이밍 오버워치 팀, 배틀리카 인수</h3>
-						</a>
-						<p class="news_date">2020-06-16</p>
-					</div>
-					<div class="news_con">
-						<p>
-							오즈의 전신인 긱스타 이클립스의 아카데미 팀인 GGTC로 창단해 활동했던 배틀리카는 이후 팀명을 바꿔 컨텐더스 코리아 2020 시즌1에 참가했다.
-						</p>
-					</div>
-				</div>
-				<div class="news">
-					<div class="news_img">
-						<a href="http://www.inven.co.kr/webzine/news/?news=238295&iskin=esports" target="blank">
-						<img src="oz/news/프차.jpg">
-					</a>
-					</div>
-					<div class="news_title">
-						<a href="http://www.inven.co.kr/webzine/news/?news=238295&iskin=esports" target="blank">
-							<h3>오즈게이밍, LCK 프랜차이즈 도전 선언</h3>
-						</a>
-						<p class="news_date">2020-05-13</p>
-					</div>
-					<div class="news_con">
-						<p>
-							오즈게이밍(OZ Gaming)으로 활동하고 있는 e스포츠 전문업체 옵티멈존이스포츠가 국내 최고 인기 e스포츠 리그 LCK(League of Legends, Campions, Korea) 프랜차이즈 도전을 선언했다.
-						</p>
+					<div class="player_info">
+						<img src="oz/unknown.png">
+						<div class="player_prod">
+							<h3>YETI</h3>
+							<p>Coach</p>
+							<h4>이도민</h4>
+						</div>
+						<div class="player_sns">
+							
+						</div>
 					</div>
 				</div>
-				<div class="news">
-					<div class="news_img">
-						<a href="https://twitter.com/OZ_Gaming_kr/status/1257208375948922881" target="blank">
-							<img src="oz/news/방송.jpg">
-						</a>
+				<div class="player">
+					<h1>Player</h1>
+					<div class="player_info">
+						<img src="oz/overwatch/Develop.png">
+						<div class="player_prod">
+							<h3>Develop</h3>
+							<p>MAIN DPS</p>
+							<h4>채락훈</h4>
+						</div>
+						<div class="player_sns">
+							<a target="blank" href="https://twitter.com/Develop_ow">
+								<img src="oz/sns/twitter.png" onmouseover="this.src='oz/sns/twitteron.png'" onmouseout="this.src='oz/sns/twitter.png'">
+							</a>
+							<a target="blank" href="https://www.instagram.com/hoon_838/">
+								<img src="oz/sns/instagram.png" onmouseover="this.src='oz/sns/instagramon.png'" onmouseout="this.src='oz/sns/instagram.png'">
+							</a>
+							<a target="blank" href="https://www.twitch.tv/develop__">
+								<img src="oz/sns/twitch.png" onmouseover="this.src='oz/sns/twitchon.png'" onmouseout="this.src='oz/sns/twitch.png'">
+							</a>
+							<a target="blank" href="mailto:miky123456@naver.com">
+								<img src="oz/sns/mail.png" onmouseover="this.src='oz/sns/mailon.png'" onmouseout="this.src='oz/sns/mail.png'">
+							</a>
+						</div>
 					</div>
-					<div class="news_title">
-						<a href="https://twitter.com/OZ_Gaming_kr/status/1257208375948922881" target="blank">
-							<h3>[ 오즈 게이밍 스트리밍 안내 ]</h3>
-						</a>
-						<p class="news_date">2020-05-04<p>
+					<div class="player_info">
+						<img src="oz/overwatch/zest.png">
+						<div class="player_prod">
+							<h3>ZEST</h3>
+							<p>SUB DPS</p>
+							<h4>김현우</h4>
+						</div>
+						<div class="player_sns">
+							<a target="blank" href="https://twitter.com/OW_Zest?s=09">
+								<img src="oz/sns/twitter.png" onmouseover="this.src='oz/sns/twitteron.png'" onmouseout="this.src='oz/sns/twitter.png'">
+							</a>
+						</div>
 					</div>
-					<div class="news_con">
-						<p>
-							안녕하세요 !
-							#OZGaming 에서 #Overwatch, #LeagueOfLegends  팀이 평일 11시 30분에 #twitchstreaming 을 통해 팬분들을 찾아갑니다.						
-						</p>
+					<div class="player_info">
+						<img src="oz/overwatch/달달스무스.png">
+						<div class="player_prod">
+							<h3>da1da1sm00th</h3>
+							<p>MAIN TNK</p>
+							<h4>황성환</h4>
+						</div>
+						<div class="player_sns">
+							<a target="blank" href="https://www.twitch.tv/da1da1sm00th">
+								<img src="oz/sns/twitch.png" onmouseover="this.src='oz/sns/twitchon.png'" onmouseout="this.src='oz/sns/twitch.png'">
+							</a>
+						</div>
+					</div>	
+					<div class="player_info">
+						<img src="oz/overwatch/SilverCoin.png">
+						<div class="player_prod">
+							<h3>SilverCoin</h3>
+							<p>SUB TNK</p>
+							<h4>박화랑</h4>
+						</div>
+						<div class="player_sns">
+							<a target="blank" href="https://twitter.com/SilverCoin_30">
+								<img src="oz/sns/twitter.png" onmouseover="this.src='oz/sns/twitteron.png'" onmouseout="this.src='oz/sns/twitter.png'">
+							</a>
+							<a target="blank" href="https://www.instagram.com/silvercoin_30/">
+								<img src="oz/sns/instagram.png" onmouseover="this.src='oz/sns/instagramon.png'" onmouseout="this.src='oz/sns/instagram.png'">
+							</a>
+							<a target="blank" href="https://www.twitch.tv/silvercoin30">
+								<img src="oz/sns/twitch.png" onmouseover="this.src='oz/sns/twitchon.png'" onmouseout="this.src='oz/sns/twitch.png'">
+							</a>
+						</div>
+					</div>	
+					<div class="player_info">
+						<img src="oz/overwatch/Friday.png">
+						<div class="player_prod">
+							<h3>Friday</h3>
+							<p>MAIN HEAL</p>
+							<h4>조민재</h4>
+						</div>
+						<div class="player_sns">
+							<a target="blank" href="https://www.facebook.com/people/%EC%A1%B0%EB%AF%BC%EC%9E%AC/100009701296171">
+								<img src="oz/sns/facebook.png" onmouseover="this.src='oz/sns/facebookon.png'" onmouseout="this.src='oz/sns/facebook.png'">
+							</a>
+							<a target="blank" href="https://www.instagram.com/m1n_jae_06/?hl=ko">
+								<img src="oz/sns/instagram.png" onmouseover="this.src='oz/sns/instagramon.png'" onmouseout="this.src='oz/sns/instagram.png'">
+							</a>
+							<a target="blank" href="https://www.twitch.tv/ow_friday">
+								<img src="oz/sns/twitch.png" onmouseover="this.src='oz/sns/twitchon.png'" onmouseout="this.src='oz/sns/twitch.png'">
+							</a>
+						</div>
 					</div>
-				</div>
-				<div class="news">
-					<div class="news_img">
-						<a href="https://twitter.com/OZ_Gaming_kr/status/1245680673232277504" target="blank">
-							<img src="oz/news/welcomeAmon.jpg">
-						</a>
-					</div>
-					<div class="news_title">
-						<a href="https://twitter.com/OZ_Gaming_kr/status/1245680673232277504" target="blank">
-							<h3>Welcome AMON !</h3>
-						</a>
-						<p class="news_date">2020-04-02</p>
-					</div>
-					<div class="news_con">
-						<p>
-							OZ Gaming OW팀의 새로 합류한 코치 AMON 입니다 !
-						</p>
-					</div>
-				</div>
-				<div class="news">
-					<div class="news_img">
-						<a href="http://www.inven.co.kr/webzine/news/?news=235817&iskin=esports" target="blank">
-							<img src="oz/news/crown.jpg">
-						</a>
-					</div>
-					<div class="news_title">
-						<a href="http://www.inven.co.kr/webzine/news/?news=235817&iskin=esports" target="blank">
-							<h3>'크라운' 이민호, 북미 떠나 챌린저스 OZ 게이밍 합류</h3>
-						</a>
-						<p class="news_date">2020-03-20</p>
-					</div>
-					<div class="news_con">
-						<p>
-							'크라운' 이민호가 북미 생활을 마치고 한국으로 돌아와 챌린저스 코리아 OZ 게이밍에 합류했다.
-						</p>
-					</div>
-				</div>
-				<div class="news">
-					<div class="news_img">
-						<a href="https://twitter.com/OZ_Gaming_kr/status/1225053192695644160" target="blank">
-							<img src="oz/news/lolschedule.jpg">
-						</a>
-					</div>
-					<div class="news_title">
-						<a href="https://twitter.com/OZ_Gaming_kr/status/1225053192695644160" target="blank">
-							<h3>2020 LCK SPRING 오즈게이밍팀 경기 스케줄입니다.</h3>
-						</a>
-						<p class="news_date">2020-02-05</p>
-					</div>
-					<div class="news_con">
-						<p>
-							2020 LCK SPRING OZ Gaming match schedules are as follows					
-						</p>
-					</div>
-				</div>
-				<div class="news">
-					<div class="news_img">
-						<a href="https://sports.naver.com/news.nhn?oid=347&aid=0000139251" target="blank">
-							<img src="oz/news/rockhead.jpg">
-						</a>
-					</div>
-					<div class="news_title">
-						<a href="https://sports.naver.com/news.nhn?oid=347&aid=0000139251" target="blank">
-							<h3>오즈 게이밍, 락헤드 플레이어즈 인수</h3>
-						</a>
-						<p class="news_date">2020-01-14</p>
-					</div>
-					<div class="news_con">
-						<p>
-							OZ 게이밍(이하 오즈 게이밍)이 권재환 감독이 이끄는 락헤드 플레이어즈를 인수해 리그 오브 레전드 팀을 창단했다.
-						</p>
-					</div>
-				</div>
-				<div class="news">
-					<div class="news_img">
-						<a href="https://twitter.com/OZ_Gaming_kr/status/1206220149172236288" target="blank">
-							<img src="oz/news/ozkart.jpg">
-						</a>
-					</div>
-					<div class="news_title">
-						<a href="https://twitter.com/OZ_Gaming_kr/status/1206220149172236288" target="blank">
-							<h3>2020 카트라이더 리그 시즌 1 개인전 본선 진출</h3>
-						</a>
-						<p class="news_date">2020-12-15</p>
-					</div>
-					<div class="news_con">
-						<p>
-							2019.12.15 2020 카트라이더 리그 시즌 1 개인전 예선전이 진행되었습니다.
-						</p>
-					</div>
+					<div class="player_info">
+						<img src="oz/overwatch/skewed.png">
+						<div class="player_prod">
+							<h3>skewed</h3>
+							<p>SUB HEAL</p>
+							<h4>김민석 </h4>
+						</div>
+						<div class="player_sns">
+							<a target="blank" href="https://www.twitch.tv/ow_skewed">
+								<img src="oz/sns/twitch.png" onmouseover="this.src='oz/sns/twitchon.png'" onmouseout="this.src='oz/sns/twitch.png'">
+							</a>
+						</div>
+					</div>	
 				</div>
 			</div>
 		</div>

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Gothic+A1|Sunflower:500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="oz/ozicon.ico">
 	<style>
 		* { 
@@ -49,7 +49,7 @@
 			font-size: 16px;
 			padding: 22px 10px;
 		}
-		#header ul a:nth-child(3) { 
+		#header ul a:nth-child(2) { 
 			border-bottom: 2px solid #feed05;
 			color: #feed05;
 		} 
@@ -80,64 +80,98 @@
 			position: absolute;
 			width: 470px; height: 80px;
 			top: 50%; left: 50%;
-			margin-top: -70px; margin-left: -235px;
-			font-size: 60px;
+			margin-top: -40px; margin-left: -235px;
+			font-size: 50px;
 			text-align: center;
 			line-height: 70px;
-			font-family: 'Mukta', sans-serif;
 		}
+		#content #main_title img { width: 100%; opacity: 0.5; }
+
 		#content #main_content {
 			padding: 10px;
-			color: white;
+			color: black;
+			background: white;
 			overflow: hidden;
 		}
-
-		#content #main_title img { width: 100%; opacity: 0.5; }
-		#content #main_title ul {
-			width: 602px; 
+		#content #main_content #about {
+			width: 90%; height: 100%;
 			margin: 0 auto;
+			padding: 0.1%;
+			font-family: 'Noto Sans KR', sans-serif;
+			border-bottom: 2px solid gray;
 		}
-		#content #main_title ul li {
-			list-style: none;
-			float: left;
-			border: 1px solid white;
-			padding: 10px;
-			width: 150px;
-			color: white;
-			text-align: center;
-			font-family: 'Sunflower', sans-serif;
-			font-size: 20px;
+		#content #main_content #about #about1 {
+			font-size: 30px;
+			margin-bottom: 1.5%;
 		}
-		#content #main_title ul li:hover {
-			border: 1px solid #feed05;
-			background-color: #feed05;
+		#content #main_content #about #about2 {
+			margin-bottom: 1.5%;
 		}
-		#content #main_title ul li:hover a { color: black; }
-		#content #main_title ul li:nth-child(3) {
-			color: #feed05;
-			border: 1px solid #feed05;
+		#content #main_content #about #about3 {
+			font-size: 17px;
+			width: 65%;
+			margin-bottom: 1.5%;
+			color: gray;
 		}
-		#content #main_title a { text-decoration: none; color: white; padding: 10px 20px; }
 
-		#content #main_content .player { 
-			overflow: hidden; 
-			margin-top: 20px;
+		#content #main_content #team_info {
+			width: 90%; height: 100%;
+			margin: 0 auto;
+			padding: 0.1%;
+			font-family: 'Noto Sans KR', sans-serif;
+			margin-top: 1.5%;
 		}
-		#content #main_content .player h1 { clear: both; margin: 10px; }
-		#content #main_content .player_info {
-			width: 20%; height: 340px;
-			background: white;
-			color: black;
+		#content #main_content #team_info .info {
+			overflow: hidden;
+			margin-bottom: 1.5%; 
+		}
+		#content #main_content #team_info .info:nth-child(3) {
+			padding-bottom: 1.5%; 
+			border-bottom:2px solid gray;
+		}
+		#content #main_content #team_info .info_title {
 			float: left;
-			font-family: 'Nanum Gothic', sans-serif;
+			width: 40%;
 		}
-		#content #main_content .player_info img { width: 100%; }
-		#content #main_content .player_info .player_prod p { float: right; }
-		.player_prod, .player_sns { padding: 10px; }
-		.player_sns a { text-decoration: none; }
-		#content #main_content .player_sns img { 
-			width: 9.8%; 
-			margin: 5px;
+		#content #main_content #team_info .info_title h3 {
+			float: left;
+			padding-right: 30px; 
+			background: linear-gradient(to top, #feed05 50%, transparent 50%);
+		}
+		#content #main_content #team_info .info_content {
+			float: left;
+			list-style-type: square;
+		}
+		#content #main_content #team_info .info_content .info_history {
+			width: 125%;
+			padding: 2%;
+			margin-left: -4%;
+		}
+		#content #main_content #team_info .info_content .info_history img {
+			width: 45px;
+			float: left;
+			margin-right: 3%;
+		}
+		#content #main_content #team_info .info_content .info_history .history_content {
+			color: gray;
+		}
+		#content #main_content #team_info .partners {
+			overflow: hidden;
+			margin-bottom: 1.5%; 
+			border: 1px solid red;
+		}
+		#content #main_content #team_info .partners .partners_info {
+			width: 125%;
+			padding: 2%;
+			margin-left: -4%;
+		}
+		#content #main_content #team_info .partners .partners_info img {
+			width: 45px;
+			float: left;
+			margin-right: 3%;
+		}
+		#content #main_content #team_info .partners .partners_info .partners_content {
+			color: gray;
 		}
 		/*
 			end content
@@ -197,73 +231,88 @@
 		<div id="header">
 			<a id="logo" href="OZ Gaming - Home.html"><img src="oz/oz.jpg"></a>
 			<ul>
-				<a href="OZ Gaming - Home.html"><li>Home</li></a>
-				<a href="OZ Gaming - About.html"><li>About</li></a>
-				<a href="OZ Gaming - AboutLol.html"><li>Team</li></a>
-				<a href="OZ Gaming - News.html"><li>News</li></a>
-				<a href="OZ Gaming - Match.html"><li>Match</li></a>
-				<a href="Oz Gaming - Gallery.html"><li>Gallery</li></a>
+				<a href="home.html"><li>Home</li></a>
+				<a href="about.html"><li>About</li></a>
+				<a href="lol.html"><li>Team</li></a>
+				<a href="news.html"><li>News</li></a>
+				<a href="match.html"><li>Match</li></a>
+				<a href="gallery.html"><li>Gallery</li></a>
 				<a href="http://ozgaming.kr/shop"><li>Shop</li></a>
 			</ul>	
 		</div>	
 		<div id="content">
 			<div id="main_title">
-				<img src="oz/pubg/pubghead.png">
-				<h1>PLAYERUNKNOWN'S BATTLEGROUNDS</h1>
-				<ul>
-					<li><a href="OZ Gaming - AboutLol.html">LOL</a></li>
-					<li><a href="OZ Gaming - About(Overwatch).html">Overwatch</a></li>
-					<li><a href="OZ Gaming - About(PUBG).html">PUBG</a></li>
-					<li><a href="OZ Gaming - About(Kart).html">Kartrider</a></li>
-				</ul>
+				<img src="oz/aboutHeader.jpg">
+				<h1>About</h1>
 			</div>
 			<div id="main_content">
-				<div class="player">
-					<h1>Staff</h1>
-					<div class="player_info">
-						<img src="oz/pubg/digger.jpg">
-						<div class="player_prod">
-							<h3>Digger</h3>
-							<p>Coach</p>
-							<h4>차한솔</h4>
-						</div>
-					</div>
+				<div id="about">
+					<p id="about1">
+						<b>WHO IS OZ GAMING ?<br>
+						WE MAKE E-SPORTS CULTURE</b>
+					</p>
+					<p id="about2">
+						소통을 통한 건전 e스포츠 문화를 추구하겠습니다.
+					</p>
+					<p id="about3">
+						오즈게이밍의 최종 목표는 건전한 e스포츠 문화를 팬 분들과 함께 즐기는 것입니다.<br>e스포츠의 인식은 아직도 많은 분들에게 부정적인 시각으로 비쳐집니다. 우리 오즈는<br>선수에게 선수부터 은퇴까지 비전을 제시하고, 팬 분들과 소통하여 참여형 e스포츠구단으로 발전하기 위해 노력중입니다. 좋은 선수, 팬, 구단이 모두 조성이 되었을 때 e스포츠는<br>그 누구에게나 건전한 문화 스포츠로써 다가갈 수 있을 것이라 믿습니다.
+					</p>
 				</div>
-				<div class="player">
-					<h1>Player</h1>
-					<div class="player_info">
-						<img src="oz/pubg/MIRA.jpg">
-						<div class="player_prod">
-							<h3>MIRA</h3>
-							<h4>김호욱</h4>
+				<div id="team_info">
+					<div class="info">
+						<div class="info_title">
+							<h3>SINCE</h3>
+						</div>
+						<div class="info_content">2018</div>
+					</div>
+					<div class="info">
+						<div class="info_title">
+							<h3>PROFESSIONAL TEAMS</h3>
+						</div>
+						<div class="info_content">
+							<li>League of Legends</li>
+							<li>Overwatch</li>
+							<li>PLAYERUNKNOWN'S BATTLEGROUNDS</li>
+							<li>KartRider</li>
 						</div>
 					</div>
-					<div class="player_info">
-						<img src="oz/pubg/PLIKHE.jpg">
-						<div class="player_prod">
-							<h3>PLIKHE</h3>
-							<h4>김성민</h4>
+					<div class="info">
+						<div class="info_title">
+							<h3>HISTORY</h3>
+						</div>
+						<div class="info_content">
+							<div class="info_history">
+								<img src="oz/overwatch/icon.jpg">
+								<p class="history_name">Overwatch</p>
+								<p class="history_content">2020년 배틀리카 인수합병</p>
+							</div>
+							<div class="info_history">
+								<img src="oz/lol/icon.png">
+								<p class="history_name">League of Legends</p>
+								<p class="history_content">2020년 리그오브레전드 챌린저스 코리아 스프링 - 6위</p>
+							</div>
+							<div class="info_history">
+								<img src="oz/overwatch/icon.jpg">
+								<p class="history_name">Overwatch</p>
+								<p class="history_content">2020년 오버워치 컨텐더즈 코리아 시즌1 - 10위</p>
+							</div>
+							<div class="info_history">
+								<img src="oz/overwatch/icon.jpg">
+								<p class="history_name">Overwatch</p>
+								<p class="history_content">2019년 GeekStar Eclipse 에서 OZ Gaming으로 인수합병.</p>
+							</div>
 						</div>
 					</div>
-					<div class="player_info">
-						<img src="oz/pubg/KaSha.jpg">
-						<div class="player_prod">
-							<h3>KaSha</h3>
-							<h4>김도형</h4>
+					<div class="partners">
+						<div class="info_title">
+							<h3>PARTNERS</h3>
 						</div>
-					</div>
-					<div class="player_info">
-						<img src="oz/pubg/Smoke.jpg">
-						<div class="player_prod">
-							<h3>Smoke</h3>
-							<h4>우태규</h4>
-						</div>
-					</div>
-					<div class="player_info">
-						<img src="oz//pubg/Elca.jpg">
-						<div class="player_prod">
-							<h3>Elca</h3>
-							<h4>조중희</h4>
+						<div class="info_content">
+							<div class="partners_info">
+								<img src="oz/about/partners-1.png">
+								<p class="partners_name">옵티멈 존 PC카페</p>
+								<p class="partners_content">국내 PC방 1등 옵티멈존 PC카페는 끊임 없는 연구개발과 품질관리, 사후처리를 통한 최상의 환경, 최대의 서비스, 최고의 맛을 제공합니다.</p>
+							</div>
 						</div>
 					</div>
 				</div>

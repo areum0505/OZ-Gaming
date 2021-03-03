@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Gothic+A1|Sunflower:500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="oz/ozicon.ico">
 	<style>
 		* { 
@@ -49,7 +48,7 @@
 			font-size: 16px;
 			padding: 22px 10px;
 		}
-		#header ul a:nth-child(2) { 
+		#header ul a:nth-child(5) { 
 			border-bottom: 2px solid #feed05;
 			color: #feed05;
 		} 
@@ -89,76 +88,16 @@
 
 		#content #main_content {
 			padding: 10px;
-			color: black;
-			background: white;
+			color: white;
 			overflow: hidden;
-		}
-		#content #main_content #about {
-			width: 90%; height: 100%;
-			margin: 0 auto;
-			padding: 0.1%;
-			font-family: 'Noto Sans KR', sans-serif;
-			border-bottom: 2px solid gray;
-		}
-		#content #main_content #about #about1 {
-			font-size: 30px;
-			margin-bottom: 1.5%;
-		}
-		#content #main_content #about #about2 {
-			margin-bottom: 1.5%;
-		}
-		#content #main_content #about #about3 {
-			font-size: 17px;
-			width: 65%;
-			margin-bottom: 1.5%;
-			color: gray;
-		}
-
-		#content #main_content #team_info {
-			width: 90%; height: 100%;
-			margin: 0 auto;
-			padding: 0.1%;
-			font-family: 'Noto Sans KR', sans-serif;
-			margin-top: 1.5%;
-		}
-		#content #main_content #team_info .info {
-			overflow: hidden;
-			margin-bottom: 1.5%; 
-		}
-		#content #main_content #team_info .info:nth-child(3) {
-			padding-bottom: 1.5%; 
-			border-bottom:2px solid gray;
-		}
-		#content #main_content #team_info .info_title {
-			float: left;
-			width: 40%;
-		}
-		#content #main_content #team_info .info_title h3 {
-			float: left;
-			padding-right: 30px; 
-			background: linear-gradient(to top, #feed05 50%, transparent 50%);
-		}
-		#content #main_content #team_info .info_content {
-			float: left;
-			list-style-type: square;
-		}
-		#content #main_content #team_info .info_content .info_history {
-			width: 125%;
-			padding: 2%;
-			margin-left: -4%;
-		}
-		#content #main_content #team_info .info_content .info_history img {
-			width: 45px;
-			float: left;
-			margin-right: 3%;
-		}
-		#content #main_content #team_info .info_content .info_history .history_content {
-			color: gray;
-		}
-		#content #main_content #team_info .partners {
-			overflow: hidden;
-			margin-bottom: 1.5%; 
 			border: 1px solid red;
+		}
+		#content #main_content #match {
+			border: 1px solid white;
+			width: 90%; height: 100%;
+			margin: 0 auto;
+			padding: 0.1%;
+			font-family: 'Nanum Gothic', sans-serif;
 		}
 		/*
 			end content
@@ -218,82 +157,34 @@
 		<div id="header">
 			<a id="logo" href="OZ Gaming - Home.html"><img src="oz/oz.jpg"></a>
 			<ul>
-				<a href="OZ Gaming - Home.html"><li>Home</li></a>
-				<a href="OZ Gaming - About.html"><li>About</li></a>
-				<a href="OZ Gaming - AboutLol.html"><li>Team</li></a>
-				<a href="OZ Gaming - News.html"><li>News</li></a>
-				<a href="OZ Gaming - Match.html"><li>Match</li></a>
-				<a href="Oz Gaming - Gallery.html"><li>Gallery</li></a>
+				<a href="home.html"><li>Home</li></a>
+				<a href="about.html"><li>About</li></a>
+				<a href="lol.html"><li>Team</li></a>
+				<a href="news.html"><li>News</li></a>
+				<a href="match.html"><li>Match</li></a>
+				<a href="gallery.html"><li>Gallery</li></a>
 				<a href="http://ozgaming.kr/shop"><li>Shop</li></a>
 			</ul>	
 		</div>	
 		<div id="content">
 			<div id="main_title">
-				<img src="oz/aboutHeader.jpg">
-				<h1>About</h1>
+				<img src="oz/matchHeader.jpg">
+				<h1>Match</h1>
 			</div>
 			<div id="main_content">
-				<div id="about">
-					<p id="about1">
-						<b>WHO IS OZ GAMING ?<br>
-						WE MAKE E-SPORTS CULTURE</b>
-					</p>
-					<p id="about2">
-						소통을 통한 건전 e스포츠 문화를 추구하겠습니다.
-					</p>
-					<p id="about3">
-						오즈게이밍의 최종 목표는 건전한 e스포츠 문화를 팬 분들과 함께 즐기는 것입니다.<br>e스포츠의 인식은 아직도 많은 분들에게 부정적인 시각으로 비쳐집니다. 우리 오즈는<br>선수에게 선수부터 은퇴까지 비전을 제시하고, 팬 분들과 소통하여 참여형 e스포츠구단으로 발전하기 위해 노력중입니다. 좋은 선수, 팬, 구단이 모두 조성이 되었을 때 e스포츠는<br>그 누구에게나 건전한 문화 스포츠로써 다가갈 수 있을 것이라 믿습니다.
-					</p>
-				</div>
-				<div id="team_info">
-					<div class="info">
-						<div class="info_title">
-							<h3>SINCE</h3>
+				<div id="schedule">
+					<div id="match">
+						<div id="upcoming">
+							
 						</div>
-						<div class="info_content">2018</div>
-					</div>
-					<div class="info">
-						<div class="info_title">
-							<h3>PROFESSIONAL TEAMS</h3>
-						</div>
-						<div class="info_content">
-							<li>League of Legends</li>
-							<li>Overwatch</li>
-							<li>PLAYERUNKNOWN'S BATTLEGROUNDS</li>
-							<li>KartRider</li>
+						<div id="result">
+							
 						</div>
 					</div>
-					<div class="info">
-						<div class="info_title">
-							<h3>HISTORY</h3>
-						</div>
-						<div class="info_content">
-							<div class="info_history">
-								<img src="oz/overwatch/icon.jpg">
-								<p class="history_name">Overwatch</p>
-								<p class="history_content">2020년 배틀리카 인수합병</p>
-							</div>
-							<div class="info_history">
-								<img src="oz/lol/icon.png">
-								<p class="history_name">League of Legends</p>
-								<p class="history_content">2020년 리그오브레전드 챌린저스 코리아 스프링 - 6위</p>
-							</div>
-							<div class="info_history">
-								<img src="oz/overwatch/icon.jpg">
-								<p class="history_name">Overwatch</p>
-								<p class="history_content">2020년 오버워치 컨텐더즈 코리아 시즌1 - 10위</p>
-							</div>
-							<div class="info_history">
-								<img src="oz/overwatch/icon.jpg">
-								<p class="history_name">Overwatch</p>
-								<p class="history_content">2019년 GeekStar Eclipse 에서 OZ Gaming으로 인수합병.</p>
-							</div>
-						</div>
-					</div>
-					<div class="partners">
+					<div id="calendar">
 						
 					</div>
-				</div>
+				</div>	
 			</div>
 		</div>
 		<div id="footer">
