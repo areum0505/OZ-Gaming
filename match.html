@@ -90,29 +90,59 @@
 				padding: 10px;
 				color: white;
 				overflow: hidden;
-				border: 1px solid red;
 			}
 			#content #main_content #match {
-				border: 1px solid white;
 				width: 90%; height: 100%;
 				margin: 0 auto;
 				padding: 0.1%;
 				font-family: 'Nanum Gothic', sans-serif;
+				display: block;
 			}
 			#content #main_content #match .result {
-				border: 1px solid red;
-				width: 50%;
-				float: left
+				width: 46%;
+				float: left;
+				margin: 0 2% 2% 2%;
 			}
 			#content #main_content #match .result .result_title {
-				border: 1px solid blue;
+				font-size: 23px;
+			}
+			#content #main_content #match .result .result_date {
+				border-bottom: 1px solid black;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background: #feed05;
+				color: black;
+			}
+			#content #main_content #match .result .result_content {
+				background: white;
+				height: 70px;
+			}
+			#content #main_content #match .result .result_content .left_team {
+				height: 100%;
+				float: left;
+				padding: 1%;
+				margin: 0 10%;
+			}
+			#content #main_content #match .result .result_content .right_team {
+				height: 100%;
+				float: right;
+				padding: 1%;
+				margin: 0 10%;
+			}
+			#content #main_content #match .result .result_content .result_letter {
+				float: left;
+				color: black;
+				padding: 3.3%;
+				width: 30%;
+				text-align: center;
 			}
 			#content #main_content #schedule .calendar {
 				width: 90%;
 				margin: 50px;
-				border: 1px solid red;
 				background: white;
 				color: black;
+				clear: both;
 			}
 			#content #main_content #schedule .calendar .calendar_header {
 				display: flex;
@@ -133,8 +163,42 @@
 				line-height: 5%;
 				background-color: transparent;
 				cursor: pointer;
-				border: 2px solid red;
+				border: 1px solid black;
+				margin-top: 5px;
 				border-radius: 50%;
+			}
+			#content #main_content #schedule .calendar .calendar_info {
+				margin-top: 3%;
+			}
+			#content #main_content #schedule .calendar .calendar_info .team_evnet {
+				width: 10%;
+				display: inline-block;
+				height: 100%;
+				margin-left: 2%;
+				margin-right: -3%;
+			}
+			#content #main_content #schedule .calendar .team_evnet .event_color {
+				width: 30%;
+				height: 25px;
+				border-radius: 50%;
+				float: left;
+			}
+			#content #main_content #schedule .calendar .team_evnet #event_color_lol {
+				background: red;
+			}
+			#content #main_content #schedule .calendar .team_evnet #event_color_ow {
+				background: green;
+			}
+			#content #main_content #schedule .calendar .team_evnet #event_color_pubg {
+				background: blue;
+			}
+			#content #main_content #schedule .calendar .team_evnet #event_color_kart {
+				background: pink;
+			}
+			#content #main_content #schedule .calendar .team_evnet .event_letter {
+				padding: 3%; 
+				width: 70%;
+				float: left;
 			}
 			#content #main_content #schedule .calendar .calendar_main .days {
 				display: flex;
@@ -166,7 +230,20 @@
 				border-bottom: 1px solid #333333;
 				border-left: 1px solid #333333;
 			}
-			.other {
+			#content #main_content #schedule .calendar .calendar_main .dates .date .match_schedule {
+				list-style: none;
+			}
+			#content #main_content #schedule .calendar .calendar_main .dates .date .match_schedule .lol {
+				font-size: 13px;
+				background: red;
+				color: black;
+			}
+			#content #main_content #schedule .calendar .calendar_main .dates .date .match_schedule .ow {
+				font-size: 13px;
+				background: green;
+				color: black;
+			}
+			#content #main_content #schedule .calendar .calendar_main .dates .date .other {
 				opacity: 0.4;
 				color: black;
 			}
@@ -226,7 +303,7 @@
 	<body>
 		<div id="all">
 			<div id="header">
-				<a id="logo" href="OZ Gaming - Home.html"><img src="./oz/oz.jpg"></a>
+				<a id="logo" href="home.html"><img src="./oz/oz.jpg"></a>
 				<ul>
 					<a href="home.html"><li>Home</li></a>
 					<a href="about.html"><li>About</li></a>
@@ -250,10 +327,10 @@
 									UPCOMING
 								</div>
 								<div class="result_date">
-									
-								</div>
-								<div class="result_team">
 									예정된 경기가 없습니다.
+								</div>
+								<div class="result_content">
+
 								</div>
 							</div>
 							<div class="result">
@@ -261,10 +338,15 @@
 									RESULT
 								</div>
 								<div class="result_date">
-									2020 Overewatch Contenders Season 2 | SEP 24 15:00
+									2020 Overewatch Contenders Season 2
 								</div>
-								<div class="result_team">
-									[OW]OWCK | OZGvsO2B	
+								<div class="result_content">
+									<img class="left_team" src="./oz/ozicon.png">
+									<div class="result_letter">
+										<b>OZ</b> vs BM<br>
+										<b>0</b> - 3
+									</div>
+									<img class="right_team" src="./oz/overwatch/teambm.png">
 								</div>
 							</div>
 							<div class="calendar">
@@ -277,6 +359,40 @@
 									</div>
 									<div class="nav">
 										<button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+									</div>
+								</div>
+								<div class="calendar_info">
+									<div class="team_evnet">
+										<div class="event_color" id="event_color_lol">
+											
+										</div>
+										<div class="event_letter">
+											LOL
+										</div>
+									</div>
+									<div class="team_evnet">
+										<div class="event_color" id="event_color_ow">
+											
+										</div>
+										<div class="event_letter">
+											OW
+										</div>
+									</div>
+									<div class="team_evnet">
+										<div class="event_color" id="event_color_pubg">
+											
+										</div>
+										<div class="event_letter">
+											PUBG
+										</div>
+									</div>
+									<div class="team_evnet">
+										<div class="event_color" id="event_color_kart">
+											
+										</div>
+										<div class="event_letter">
+											KART
+										</div>
 									</div>
 								</div>
 								<div class="calendar_main">

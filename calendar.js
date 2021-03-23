@@ -19,6 +19,24 @@ const renderCalendar = () => {
 	const thisDates = [...Array(TLDate + 1).keys()].slice(1);	// 이번 달 날짜
 	const nextDates = [];				// 다음 달 날짜
 
+	const matchDates = [
+	{name: "vs JAG", year: 2020, month: 7, day:9, time: "14:00", event: "lol"},
+	{name: "vs BRB", year: 2020, month: 7, day:16, time: "17:00", event: "lol"},
+	{name: "vs ASP", year: 2020, month: 7, day:23, time: "17:00", event: "lol"},
+	{name: "vs GRF", year: 2020, month: 7, day:27, time: "17:00", event: "lol"},
+	{name: "vs RNW", year: 2020, month: 7, day:30, time: "17:00", event: "lol"},
+	{name: "vs JAG", year: 2020, month: 8, day:3, time: "17:00", event: "lol"},
+	{name: "vs BRB", year: 2020, month: 8, day:6, time: "14:00", event: "lol"},
+	{name: "vs EM", year: 2020, month: 8, day:10, time: "17:00", event: "lol"},
+	{name: "vs ESC", year: 2020, month: 8, day:14, time: "14:00", event: "lol"},
+	{name: "vs RNW", year: 2020, month: 8, day:24, time: "17:00", event: "lol"},
+	{name: "vs EM", year: 2020, month: 8, day:27, time: "19:00", event: "ow"},
+	{name: "vs RNW", year: 2020, month: 9, day:3, time: "19:00", event: "ow"},
+	{name: "vs TDI", year: 2020, month: 9, day:17, time: "19:00", event: "ow"},
+	{name: "vs EM", year: 2020, month: 9, day:17, time: "19:00", event: "ow"},
+	{name: "vs BM", year: 2020, month: 9, day:24, time: "17:00", event: "ow"}
+	];
+
 	if (PLDay !== 6) {						// 지난달 마지막 요일이 토요일(6)이라면 그릴 필요 없음
 	  for (let i = 0; i < PLDay + 1; i++) {	// 0부터 지난달 마지막 요일
 	    prevDates.unshift(PLDate - i);		// prevDates 배열에 앞쪽으로 계속 채워넣음
@@ -35,7 +53,30 @@ const renderCalendar = () => {
 		const condition = i >= firstDateIndex && i < lastDateIndex + 1
 		? 'this'
 		: 'other';
-		dates[i] = `<div class="date"><span class="${condition}">${date}</span></div>`;
+
+		var isMatch = false;
+		var matchIndex = 0;
+		var matchEvent = "";
+
+		matchDates.forEach((item, index) => {
+			if(viewYear == item.year && viewMonth + 1 == item.month && date == item.day) {
+				isMatch = true;
+				matchIndex = index;
+				matchEvent = item.event;
+			}
+		})
+
+		if(isMatch && condition == 'this') {
+			dates[i] = `<div class="date">
+			<span class="${condition}">${date}</span>
+			<ul class="match_schedule">
+			<li class="${matchEvent}">${matchDates[matchIndex].name + " " + matchDates[matchIndex].time}</li>
+			</ul>
+			</div>`;
+		} else {
+			dates[i] = `<div class="date"><span class="${condition}">${date}</span></div>`;
+		}
+
 	})
 
 	document.querySelector('.dates').innerHTML = dates.join('');
